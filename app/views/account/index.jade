@@ -1,0 +1,16 @@
+extends ../shared/template
+block content
+
+  table
+    thead
+      th Name
+      th Balance
+      th Type
+      th Opened
+    tbody
+      each account in accounts
+        tr
+          td: a(href='/accounts/'+ account._id)= account.name
+          td= account.balance
+          td= account.type
+          td= account.dateCreated

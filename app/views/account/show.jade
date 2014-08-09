@@ -1,0 +1,38 @@
+extends ../shared/template
+block content
+  h1= account.name
+  h2= account.balance
+  h3= account.type
+  h3= creationDate
+  table
+    thead
+      th Id
+      th Date
+      th Type
+      th Amount
+      th Fee
+    tbody
+      each transaction in account.transactions
+        tr
+          td= transaction._id
+          td= transaction.date
+          td= transaction.type
+          td= transaction.amount
+          td= transaction.fee
+  table
+    thead
+      th Id
+      th Date
+      th From
+      th To
+      th Amount
+      th Fee
+    tbody
+      each transfer in account.transfers
+        tr
+          td= transfer._id
+          td= transfer.date
+          td= transfer.fromAccountId
+          td= transfer.toAccountId
+          td= transfer.amount
+          td= transfer.fee

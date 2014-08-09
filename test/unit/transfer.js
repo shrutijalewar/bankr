@@ -52,12 +52,10 @@ describe('Transfer', function(){
       });
     });
   });
-describe('.findById', function(){
+describe('.findByAccountId', function(){
     it('should find transfers by the toAccountId and fromAccountId', function(done){
       var accountId = '53e5659ee1eb2778810b9d4a';
-      Transfer.findById(accountId, function(err, transfers){
-        console.log('transfers', transfers);
-        //expect(transfers).to.not.be(null);
+      Transfer.findByAccountId(accountId, function(err, transfers){
         expect(transfers).to.have.length.gt(0);
         done();
       });
