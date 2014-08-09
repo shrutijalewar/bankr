@@ -12,7 +12,7 @@ function Transfer(obj){
 
 Object.defineProperty(Transfer, 'collection',{
   get: function(){
-    return global.mongodb.collection('transfer');
+    return global.mongodb.collection('transfers');
   }
 });
 
